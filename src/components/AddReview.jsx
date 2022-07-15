@@ -12,6 +12,7 @@ const AddReview = ({ review, setReview }) => {
 
       const newReview = {
         ...review,
+
       };
 
       dispatch(reviewsAdd(newReview));
@@ -44,7 +45,6 @@ const AddReview = ({ review, setReview }) => {
           }}
         >
           {reviewsState.addReviewStatus === "pending" }
-            {/*<CircularProgress size={24} color="secondary" />*/}
 
             Make a Review
         </Button>

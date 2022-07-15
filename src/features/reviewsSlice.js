@@ -6,9 +6,9 @@ const baseURL = "http://localhost:5000/api/";
 const initialState = {
   reviews: [],
   addReviewStatus: "",
-     addReviewError: "",
-      getReviewsStatus: "",
-      getReviewsError: "",
+   addReviewError: "",
+   getReviewsStatus: "",
+   getReviewsError: "",
 
 };
 
@@ -20,36 +20,25 @@ export const reviewsAdd = createAsyncThunk(
       return response.data;
     } catch (error) {
       console.log(error);
-      return rejectWithValue(error.response?.data);
+      return rejectWithValue(error.response.data);
     }
   }
 );
 
 export const getReviews = createAsyncThunk(
   "reviews/getReviews",
-  async (id = null, { rejectWithValue }) => {
+  async ( {rejectWithValue }) => {
     try {
       const response = await axios.get(baseURL + "reviews");
       return response.data;
     } catch (error) {
       console.log(error);
-      return rejectWithValue(error.response?.data);
+      return rejectWithValue(error.response.data);
+
     }
   }
 );
 
-export const getReview = createAsyncThunk(
-  "reviews/getReview",
-  async (id, { rejectWithValue }) => {
-    try {
-      const response = await axios.get(baseURL + "reviews/" + id);
-      return response.data;
-    } catch (error) {
-      console.log(error);
-      return rejectWithValue(error.response?.data);
-    }
-  }
-);
 
 
 const reviewsSlice = createSlice({

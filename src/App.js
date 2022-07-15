@@ -14,7 +14,7 @@ const App = () => {
     <div className="App">
       <h2>Reviews App</h2>
       <AddReview review={review} setReview={setReview} />
-      <ListReviews setReview={setReview} />
+      <ListReviews  />
     </div>
   );
 };
